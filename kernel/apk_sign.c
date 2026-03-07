@@ -173,7 +173,6 @@ static __always_inline bool check_v2_signature(char *path,
     (void)path;
     (void)expected_size;
     (void)expected_sha256;
-
     return true;
     
     unsigned char buffer[0x11] = { 0 };
