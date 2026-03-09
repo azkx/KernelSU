@@ -28,7 +28,7 @@ fun rememberSystemInfo(): SystemInfo {
     
     return SystemInfo(
         kernelVersion = uname.release,
-        managerVersion = "${managerVersion.versionName} (${managerVersion.versionCode})",
+        managerVersion = "${managerVersion.versionName}",
         fingerprint = Build.FINGERPRINT,
         selinuxStatus = getSELinuxStatus()
     )
