@@ -90,6 +90,14 @@ fun HomePagerMaterial(
             } else if (state.showKernelPrBuildWarning) {
                 WarningCard(stringResource(id = R.string.home_pr_kernel_warning))
             }
+            if (state.showVersionMismatchWarning) {
+                WarningCard(
+                    stringResource(id = R.string.home_version_mismatch).format(
+                        state.currentManagerVersionCode,
+                        state.ksuVersion
+                    )
+                )
+            }
             if (state.showGkiWarning) {
                 WarningCard(stringResource(id = R.string.home_gki_warning))
             }
@@ -182,7 +190,7 @@ private fun StatusCard(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable { actions.onInstallClick() }
+                    .clickable(enabled = !state.isLateLoadMode) { actions.onInstallClick() }
                     .padding(24.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
