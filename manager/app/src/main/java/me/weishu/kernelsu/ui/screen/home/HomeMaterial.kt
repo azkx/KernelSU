@@ -84,6 +84,7 @@ fun HomePagerMaterial(
                 state = state,
                 actions = actions,
             )
+            /*
             if (state.showManagerPrBuildWarning) {
                 WarningCard(stringResource(id = R.string.home_pr_build_warning))
             } else if (state.showKernelPrBuildWarning) {
@@ -100,6 +101,7 @@ fun HomePagerMaterial(
             if (state.showGkiWarning) {
                 WarningCard(stringResource(id = R.string.home_gki_warning))
             }
+            */
             if (state.showRequireKernelWarning) {
                 WarningCard(
                     stringResource(id = R.string.require_kernel_version,
